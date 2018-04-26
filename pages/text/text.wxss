@@ -1,0 +1,107 @@
+/**index.wxss**/
+/*.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.user-info{
+  display: block;
+  height: 30%;
+  background-color: chartreuse
+}*/
+
+@import "./buttons.wxss";
+page{
+  height: 100%;
+}
+.container{
+  height: 100%;
+}
+.user-info{
+  height:30%;
+  display:flex;
+  justify-content:center;
+  align-items: center
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+
+
+
+
+
+
+.login{
+  height: 70%;
+}
+
+.login-button{
+  position: relative;
+  top: 20%;
+}
+
+
+.login-button-student{
+  color: #0e79c8;  /*bug, 不加important无效*/
+
+}
+.teacherLogin{
+  display: inline-flex;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 118, 128, 0.7);
+  justify-content: center;
+  transition: width 1s;
+}
+
+
+.studentLogin{
+  display:  inline-flex;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(76, 176, 249, 0.7);
+  justify-content: center;
+  transition: width 1s;
+}
+.teacherLogin-foucs{
+  width: 70%
+}
+.teacherLogin-unfoucs{
+  width: 30%
+}
+.studentLogin-foucs{
+  width: 70%
+}
+.studentLogin-unfoucs{
+  width: 30%
+}
+
+
+
+
+
