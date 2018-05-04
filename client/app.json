@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/firstIndex/firstIndex",
+    "pages/stu_regis/stu_regis",
+    "pages/tea_regis/tea_regis",
+    "pages/index1/index",
+    "pages/addCgi/addCgi",
+    "pages/stu_index/stu_index",
+    "pages/tea_index/tea_index"
+  ],
+  "window":{
+    "backgroundColor":"#F6F6F6",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "Wafer Quick Start",
+    "navigationBarTextStyle":"black"
+  }
+}
