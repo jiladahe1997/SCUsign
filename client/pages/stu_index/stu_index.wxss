@@ -10,16 +10,28 @@
 }
 
 
-
-text {
-    font-family: "方正幼线简体"
+view{
+    box-sizing: border-box;
 }
+text {
 
+}
 page{
     height: 100%;
+    width: 100%;
+
 }
+
+
+
+
+
+
+
+
 .container{
-    height: 100%
+    height: 100%;
+    width: 100%;
 }
 
 .title{
@@ -27,6 +39,7 @@ page{
     height: 25%;
     margin-left: 5%;
     padding-top: 10%;
+    font-family: "方正幼线简体";
 }
 .title-time{
     width: 100rpx;
@@ -53,15 +66,130 @@ page{
 
 .date{
     height: 25%;
+    width: 100%;
+    font: 17px "微软雅黑";
 }
+.date-date{
+    width: 100%;                                                   /*bug:text元素flex布局的space-between无效*/
+    margin-top: 2%;
+    padding: 0 10% 0  3%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.date-week{
+    display: block;
+    width:100%;
+}
+
+.date-weather{
+    text-align: right;
+    padding: 0 5% 0  3%;
+}
+
+.date-weather-img{
+    width: 100rpx;
+    height: 100rpx;
+    vertical-align: middle
+}
+
+.date-weather-min,.date-weather-max{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+
 
 
 
 .course{
     height: 40%;
+    padding-top: 10%;
+   text-align: center
+}
+.course-icon-left, .course-icon-right{
+    width: 40rpx;
+    height: 80rpx;
+    vertical-align: middle
+}
+.course-icon-left,{
+ 
+}
+
+.course-scroll-cover{
+    display: inline-block;
+    height: 100%;
+    width: 80%;
+    margin: 0 2%;
+    vertical-align: middle;
+    text-align: left;
+    overflow: hidden;
+
+}
+.course-scroll{
+    white-space: nowrap
+}
+
+.scroll-item{
+    display: inline-flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    margin: 1%;
+    padding: 1%;
+    text-align: left;
+    background-color: #e8e7e5;
+    font-size: 17px;
+    white-space: normal
 }
 
 
+.scroll-name{
+    display: block;
+    margin-top:15%; 
+}
+.scroll-icon{
+    display: block;
+    align-self: center;
+    margin-top:20%;
+}
+.scroll-isopen{
+    display: block;
+    align-self: center;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
 .tabbar{
-    height: 10%;
+    height: 5%;
+    padding: 2% 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.tabbar-item{
+    text-align: center
+}
+.tabbar-diviLine{
+    width: 100%;                                                         /*flex布局不会有overflow，因此这里单独处理*/
+    height: 1px;
+    margin-top: 0%;
+    background-color: black;              
+    display: block
+}
+.tabbar-img{
+    width:50rpx;
+    height: 50rpx;
+}
+.tabbar-text{
+    font-size: 15px;
+    display: block;
+    position: relative;
+    top: -50%;
 }

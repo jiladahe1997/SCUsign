@@ -5,12 +5,60 @@
         <text decode="true" class="title-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;任茗睿同学。</text>
     </view>
     <view class="date">
-        日期，天气
+       <view class="date-date">
+            <text>2018年5月7日</text>
+            <text>星期一</text>
+            <text class="date-week">第10教学周</text>
+       </view>
+       <view class="date-weather">
+        <text>目前天气：晴</text>
+        <image class="date-weather-img" src="./qing.png" />
+        <text class="date-weather-max">最高气温：25℃</text>
+        <text class="date-weather-min">最低气温：14℃</text>
+       </view>
     </view>
-    <scroll-view  class="course" scroll-x="">
-        nbsp;课程信息
-    </scroll-view>
+    <view class="course" >
+        <image mode="" class="course-icon-left" src="./enter-left.png" />
+        <view class="course-scroll-cover">
+        <scroll-view  class="course-scroll" scroll-x="true" scroll-y="true">
+        <view class="scroll-item">
+            <text>C++语言程序设计</text>
+            <text class="scroll-name">游洪跃</text>
+            <icon class="scroll-icon" type="cancel" size="40" color="red" />
+            <text class="scroll-isopen">签到未开启</text>
+        </view>
+        <view class="scroll-item">
+            <text>C++语言程序设计</text>
+            <text class="scroll-name">游洪跃</text>
+            <icon class="scroll-icon" type="cancel" size="40" color="red" />
+            <text class="scroll-isopen">签到未开启</text>
+        </view>
+        <view class="scroll-item">
+            <text>C++语言程序设计</text>
+            <text class="scroll-name">游洪跃</text>
+            <icon class="scroll-icon" type="cancel" size="40" color="red" />
+            <text class="scroll-isopen">签到未开启</text>
+        </view>
+         </scroll-view>
+        </view>
+        <image class="course-icon-right" src="./enter-right.png" />
+        <view class="tabbar-diviLine"></view>
+    </view>
+
     <view class="tabbar">
-        底部bar
+
+        <view class="tabbar-item">
+            <image class="tabbar-img" src="./tabbar_index.png" />
+            <text class="tabbar-text">首页</text>
+        </view>
+        <view class="tabbar-item">
+            <image class="tabbar-img" src="./tabbar_person.png" />
+            <text class="tabbar-text">个人信息</text>      
+        </view>
+        <view class="tabbar-item"> 
+            <image class="tabbar-img" src="./tabbar_add.png" />
+            <text class="tabbar-text">添加课程</text>
+         </view>
+        
     </view>
 </view>

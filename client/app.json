@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/stu_index/stu_index",
     "pages/test_index/test_index",
     "pages/stu_regis/stu_regis",
-    "pages/stu_index/stu_index",
     "pages/index/index",
     "pages/firstIndex/firstIndex",
     "pages/tea_regis/tea_regis",

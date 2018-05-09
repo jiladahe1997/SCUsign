@@ -23,7 +23,7 @@ Page({
                     token: this.data.token
                 },
                 success: function(res) {
-                    console.log("最终渲染由其他两位完成",res)
+                    //渲染主界面
                 }
             })
            }
