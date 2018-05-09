@@ -63,5 +63,11 @@ Page({
                 }
             }
         })
+    },
+    backIndex(){
+        wx.navigateTo({
+            url: '../text_index/text_index'
+        })
     }
+
 })

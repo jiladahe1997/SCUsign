@@ -1,0 +1,34 @@
+<!--pages/index/index.wxml-->
+
+    <view class="container-morning" style="{{display_morning}}">
+        <view class="title">
+            <view class="title-cover">
+                <image class="title-img" mode="aspectFit" src="./index_title.png" />
+            </view>
+            <icon class="title-cursor"/>
+            <canvas class="title-text" canvas-id="title-text"></canvas>
+        </view>
+        <image class="main"  src="./index_main.jpg" />
+        <text bindtap="start" class="start">开始使用</text>
+    </view>
+    <view class = "container-afternoon" style="{{display_afternoon}}">
+        <view class="title title-afternoon">
+            <view class="title-cover title-cover-afternoon">
+                <image class="title-img title-img-afternoon" mode="aspectFit" src="./index_title.png" />
+            </view>
+            <icon class="title-cursor"/>
+            <text class="title-text-afternoon" >{{title_text}}</text>
+        </view>
+         <text bindtap="start" class="start start-afternoon">开始使用</text>
+    </view>
+    <view class="container-evening" style="{{display_evening}}">
+        <view class="title">
+            <view class="title-cover">
+                <image class="title-img" mode="aspectFit" src="./index_title_evening.png" />
+            </view>
+            <icon class="title-cursor"/>
+             <text class="title-text-afternoon" >{{title_text}}</text>
+        </view>
+        <image class="main"  src="./index_evening.png" />
+        <text bindtap="start" class="start start-evening">开始使用</text>
+    </view>

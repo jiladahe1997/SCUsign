@@ -1,0 +1,29 @@
+.container-afternoon{
+    height: 100%;
+    width: 100%;
+    padding: 1px;
+    background-image: url('https://jiladahe1997-1256609098.cos.ap-chengdu.myqcloud.com/SCUsign/index_afternoon.png');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.title-afternoon{
+    margin-top: 35%
+}
+
+.title-cover-afternoon{
+    margin-left: 10%
+}
+.title-img-afternoon{
+    background-color: transparent;   
+}
+
+.title-text-afternoon{
+    margin-left: 50%;
+    font-size: 10px;
+    display: block;
+}
+
+.start-afternoon{
+    
+}

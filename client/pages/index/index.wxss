@@ -1,0 +1,107 @@
+/* pages/index/index.wxss */
+
+
+Page{
+    height: 100%;
+    width: 100%;
+    /*overflow: hidden;*/     /*bug: 根元素设置overflow无效*/
+}
+.container-morning{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.title{
+    margin-top:5%;
+    height:25%
+}
+
+.title-img{                      /*总结一下： 小程序里面的图片和html中的图片img标签表现不相同，请注意。*/
+    width: 600rpx;               /*html中同时设置width和height，图片将无法保持横宽比*/
+    height: 180rpx;                /*而在小程序中设置width和height还可以保持横宽比，因此在保持的同时，你设置的值不一定就是横宽比的值，因此会宽和长必定有一边会多出来*/
+    /*background-color: bisque  */ /*aspectfit是指缩放图片至长或宽中较短的那边的值与设置的width或height相同，这样的话另一边就一定会小于设置的widht或height，图片能百分百显示*/
+}                                 /*aspectfull值缩放图片至长或宽中较长的那边值与设置的width或height相同，这样的话另一边就一定会大于设置的width或height，另一边就会截取*/
+.title-cover{
+    width: 42rpx;
+    display: inline-block;
+    overflow: hidden;
+    animation: title-show .5s steps(3) 1s forwards,
+    title-show-2 .3s steps(1) 1.5s ,
+    title-show-3 .3s steps(1) 1.8s ,
+    title-show-4 .6s steps(2) 2.1s forwards;
+    vertical-align: middle
+}
+
+@keyframes title-show{
+    0%{width: 42rpx}
+    100%{width: 276rpx}
+}
+
+@keyframes title-show-2{
+    0%{width:276rpx}
+    100%{width: 400rpx}
+}
+@keyframes title-show-3{
+    0%{width:400rpx}
+    100%{width: 430rpx}
+}
+@keyframes title-show-4{
+    0%{width:430rpx}
+    100%{width: 550rpx}
+}
+
+.title-cursor{
+    width: 10rpx;
+    height: 50px;
+    margin-left: 15rpx;
+    background: #2ebaae;
+    vertical-align: middle;
+    animation: blink 1.5s linear infinite;
+    opacity: 0;
+}
+@keyframes blink{
+    0%{opacity: 0}
+    1%{opacity: 1}
+}
+
+.title-text{
+    width: 300px;
+    height: 20px;
+    margin-top: 5%;
+    margin-left: 35%
+}
+
+
+.main{
+    width:100%;
+    height:45%;
+}
+
+@font-face {
+    font-family: 'jdzhonyuanjian11d00182251cbd1';
+    src: url('//cdn.webfont.youziku.com/webfonts/nomal/117713/19673/5aec3f8bf629d80ed0c29db0.gif?r=73825804375');
+    src: url('//cdn.webfont.youziku.com/webfonts/nomal/117713/19673/5aec3f8bf629d80ed0c29db0.gif?r=73825804375?#iefix') format('embedded-opentype'),url('//cdn.webfont.youziku.com/webfonts/nomal/117713/19673/5aec3f8bf629d80ed0c29db0.png?r=73825804375') format('woff2'),url('//cdn.webfont.youziku.com/webfonts/nomal/117713/19673/5aec3f8bf629d80ed0c29db0.bmp?r=73825804375') format('woff'),url('//cdn.webfont.youziku.com/webfonts/nomal/117713/19673/5aec3f8bf629d80ed0c29db0.jpg?r=73825804375') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+   
+.css11d00182251cbd1{
+    font-family: 'jdzhonyuanjian11d00182251cbd1';
+}
+.start{
+    display: block;
+    margin-top: 10%;
+    height: 15%;
+    font-family:'jdzhonyuanjian11d00182251cbd1';
+    text-align: center;
+    opacity:0;
+    animation: start-show 2s 4s forwards;
+}
+@keyframes start-show{
+    0%{opacity:0}
+    100%{opacity:1}
+}
+
+
+@import "./index_afternoon.wxss";
+@import "./index_evening.wxss";

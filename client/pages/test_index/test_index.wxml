@@ -1,0 +1,11 @@
+<!--pages/test_index/test_index.wxml-->
+
+<text>测试版首页，正式版会根据当前时间自动选择</text>
+
+<button bindtap="morning">早上</button>
+<button bindtap="afternoon" >下午</button>
+<button bindtap="evening" >晚上</button>
+
+<view class="text">
+    SCU sign 字体测试
+</view>

@@ -7,6 +7,7 @@
         <input name="id" id="id" type="text" placeholder="" auto-focus  />
         <label for="college">学生的学院</label>
         <input name="college" id="college" type="text" placeholder="" auto-focus  />
-        <button form-type="submit">Button</button>
+        <button form-type="submit">提交</button>
+        <button bindtap="backIndex">返回首页</button>
     </form>
 </view>
