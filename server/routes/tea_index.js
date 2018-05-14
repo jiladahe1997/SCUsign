@@ -15,7 +15,10 @@ module.exports = async function stuIndex(ctx){
     })
 
     try{
-        var result_teaInfo = await knex('tea_info').where({
+        var result = await knex('tea_info').innerJoin('course','course.c_tea','=','tea_info.tea_openid').innerJoin('stu_course','stu_course.c_id','=','course.c_id').where({
+            'tea_token': ctx.query.token
+        })
+        /*var result_teaInfo = await knex('tea_info').where({
             'tea_token': ctx.query.token
             })
         //课程信息表
@@ -28,12 +31,10 @@ module.exports = async function stuIndex(ctx){
             result_stu_course.push(await knex('stu_course').where({
                 'c_id': result_course[i].c_id
             }))
-        }
+        }*/
 
         ctx.body = {
-            stu_course: result_stu_course,
-            course: result_course,
-            teaInfo: result_teaInfo
+            tea_info: result
         }
     }catch(e){
         console.log(e);

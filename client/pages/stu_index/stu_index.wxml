@@ -6,36 +6,24 @@
     </view>
     <view class="date">
        <view class="date-date">
-            <text>2018年5月7日</text>
-            <text>星期一</text>
-            <text class="date-week">第10教学周</text>
+            <text>{{week.date}}</text>
+            <text>{{week.day}}</text>
+            <text class="date-week">{{week.week}}</text>
        </view>
        <view class="date-weather">
-        <text>目前天气：晴</text>
-        <image class="date-weather-img" src="./qing.png" />
-        <text class="date-weather-max">最高气温：25℃</text>
-        <text class="date-weather-min">最低气温：14℃</text>
+        <text>{{weather.type}}</text>
+        <image class="date-weather-img" src="{{weather.imgsrc}}" />
+        <text class="date-weather-max">最高气温：{{weather.high}}℃</text>
+        <text class="date-weather-min">最低气温：{{weather.low}}℃</text>
        </view>
     </view>
     <view class="course" >
         <image mode="" class="course-icon-left" src="./enter-left.png" />
         <view class="course-scroll-cover">
         <scroll-view  class="course-scroll" scroll-x="true" scroll-y="true">
-        <view class="scroll-item">
-            <text>C++语言程序设计</text>
-            <text class="scroll-name">游洪跃</text>
-            <icon class="scroll-icon" type="cancel" size="40" color="red" />
-            <text class="scroll-isopen">签到未开启</text>
-        </view>
-        <view class="scroll-item">
-            <text>C++语言程序设计</text>
-            <text class="scroll-name">游洪跃</text>
-            <icon class="scroll-icon" type="cancel" size="40" color="red" />
-            <text class="scroll-isopen">签到未开启</text>
-        </view>
-        <view class="scroll-item">
-            <text>C++语言程序设计</text>
-            <text class="scroll-name">游洪跃</text>
+        <view class="scroll-item" wx:for="{{course}}">
+            <text>{{item.c_name}}</text>
+            <text class="scroll-name">{{item.tea_name}}</text>
             <icon class="scroll-icon" type="cancel" size="40" color="red" />
             <text class="scroll-isopen">签到未开启</text>
         </view>

@@ -17,5 +17,11 @@ app.use(bodyParser())
 const router = require('./routes')
 app.use(router.routes())
 
+//更新天气
+const get_weather = require('./routes/weather.js')
+setInterval(get_weather,1000*60*5)
+    
+
+
 // 启动程序，监听端口
 app.listen(config.port, () => debug(`listening on port ${config.port}`))

@@ -57,7 +57,7 @@ router.post('/tea_regis', tea_regis)
 var reset_database = require('./reset_database')
 router.get('/reset_database',reset_database)
 
-var stu_index = require('./tea_index')
+var stu_index = require('./stu_index')
 router.get('/stu_index',stu_index)
 var tea_index = require('./tea_index')
 router.get('/tea_index',tea_index)

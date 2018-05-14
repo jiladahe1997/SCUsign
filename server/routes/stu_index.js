@@ -1,6 +1,7 @@
 const { appId: appId, appSecret: appSecret, mysql:config } = require('../config.js')
 
 module.exports = async function stu_index(ctx){
+    
     var knex = require('knex')({
         client: 'mysql',
         connection: {
@@ -15,31 +16,17 @@ module.exports = async function stu_index(ctx){
     })
 
     try{
-        var result_stuInfo = await knex('stu_info').where({
+        //优化：连接查询，
+        var result_join = await knex('stu_info').innerJoin('stu_course','stu_info.stu_openid','=','stu_course.stu_openid').innerJoin('course','course.c_id','=','stu_course.c_id').innerJoin('tea_info','tea_info.tea_openid','=','course.c_tea').where({
             'stu_token': ctx.query.token
-            })
-        //学生选课表
-        var result_stu_course = await knex('stu_course').where({
-            'stu_openid': result_stuInfo[0].stu_openid
-            })
-        //课程信息表
-        var result_course = []
-        //教师信息表
-        var result_teaInfo = []
-        for(let i=0;i<result_stu_course.length;i++){
+        })
+        var week = await knex('week')
+        var weather = await knex('weather')
 
-            
-            result_course.push((await knex('course').where({
-                'c_id': result_stu_course[i].c_id
-            }))[0])
-            result_teaInfo.push((await knex('tea_info').where({
-                'tea_openid': result_course[i].c_tea
-            }))[0])
-        }
         ctx.body = {
-            stu_name: result_stuInfo,
-            course: result_course,
-            teaInfo: result_teaInfo
+            stu_info: result_join,
+            week_info: week,
+            weather: weather
         }
     }catch(e){
         console.log(e);

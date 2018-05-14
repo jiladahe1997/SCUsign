@@ -158,12 +158,12 @@ Page({
             },
             success: function (res) {
               console.log(res);
-              res.data.isSuccess = false
+              //res.data.isSuccess = false
               if (res.data.isSuccess) {
                 wx.setStorage({
                   key: 'token',
-                  data: "oWh6P4rJzItfs3ImcinTZ8NcBxX1",
-                  //data: res.data.token,
+                  //data: "oWh6P4rJzItfs3ImcinTZ8NcBxX1",
+                  data: res.data.token,
                   success: () => {
                     wx.hideLoading()
                     wx.showModal({
