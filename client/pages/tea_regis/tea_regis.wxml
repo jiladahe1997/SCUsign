@@ -1,8 +1,0 @@
-<view class="container">
-    <text class="title">教师注册页面</text> 
-    <form bindsubmit="regis" bindreset="">
-        <label for="name">老师的姓名</label>
-        <input name="name" id="name" type="text" placeholder="" auto-focus password />
-        <button form-type="submit">Button</button>
-    </form>
-</view>

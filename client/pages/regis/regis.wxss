@@ -1,0 +1,45 @@
+/* pages/regis/regis.wxss */
+.style{
+  color: black;
+  font-size: 120rpx;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.change{
+  text-align: center;
+  margin-top: 5%;
+}
+
+.foreword{
+  color: white;
+  text-align: center;
+  font-size: 50rpx
+}
+
+.input{
+    padding-left: 5%;
+    height: 40px;
+}
+
+.inputView{
+    border:  1px solid white;
+    border-radius: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50%;
+}
+
+page { 
+overflow:hidden; 
+position:fixed; 
+background-image:url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525323701596&di=849de6974b2f1d8a3347eea28271db01&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01b2295568a994000001271604da4f.jpg%401280w_1l_2o_100sh.jpg'); 
+margin: 0px; 
+/*下面的是关键的设置100%显示*/ 
+background-size: 100% 100%; 
+} 
+
+
+.container{
+  height: 100%;
+}

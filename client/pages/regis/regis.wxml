@@ -1,0 +1,43 @@
+<view>
+  <view class='style'>Welcome</view>
+  <view class='change' bindtap="toggle">点击切换到{{type}}</view>
+  <view>  
+    <view class="box1" wx:if="{{type=='学生界面'}}">
+      <view class="foreword" style="margin-top: 15% ">老师，您好！</view>
+
+      <form bindsubmit="regis" bindreset="">
+        <view class="inputView" style="margin-top: 15% ">
+          <input class='input' type='text' name='name' id ='name' placeholder='请输入您的真实姓名' value='{{name}}'></input>
+        </view>
+        <view>
+          <button formType="submit" style="margin-left: 30%; margin-right: 30%; margin-top: 10%; border-radius: 40rpx" type="primary" >保存</button>
+        </view>
+        <button style="margin-left: 30%; margin-right: 30%; margin-top: 5%; border-radius: 40rpx" form-type='reset'>重置</button>
+      </form>
+
+      
+    </view>
+
+    <view class="box2" wx:if="{{type=='老师界面'}}">
+    <view class="foreword" style="margin-top: 10% ">同学，您好！</view>
+
+      <form bindsubmit="stu_regis" bindreset="">
+        <view class="inputView" style="margin-top: 20% ">
+          <input class='input' name='name' type='text' id='name' placeholder='请输入您的真实姓名' value='{{name}}'></input>
+        </view>
+        <view class="inputView" style="margin-top: 1% ">
+        <input class='input' name="id" type='text' id='id' placeholder='请输入您的学号' value='{{name}}'></input>
+        </view>  
+        <view class="inputView" style="margin-top: 1% ">
+          <input class='input' name="college" type='text' id ='colleg' placeholder='请输入您的学院' value='{{name}}'></input>
+        </view>
+        <view>
+          <button formType="submit" style="margin-left: 30%; margin-right: 30%; margin-top: 5%; border-radius: 40rpx" type="primary" >保存</button>
+        </view>
+        <button style="margin-left: 30%; margin-right: 30%; margin-top: 5%; border-radius: 40rpx" form-type='reset'>重置</button>
+      </form>
+
+    </view>
+
+  </view>
+</view>
