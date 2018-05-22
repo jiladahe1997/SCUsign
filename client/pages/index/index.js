@@ -198,7 +198,7 @@ Page({
                   showCancel: false,
                   success:()=>{
                     wx.redirectTo({
-                      url:'../stu_regis/stu_regis'
+                      url:'../regis/regis'
                     })
                   }
                 })
