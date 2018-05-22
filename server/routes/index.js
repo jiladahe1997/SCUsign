@@ -47,19 +47,34 @@ router.get('/message', controllers.message.get)
 // POST 用来处理微信转发过来的客服消息
 router.post('/message', controllers.message.post)
 
-
+//学生注册接口
 var stu_regis = require('./stu_regis.js')
 router.post('/stu_regis', stu_regis )
 
+//教师注册接口
 var tea_regis = require('./tea_regis.js')
 router.post('/tea_regis', tea_regis)
 
 var reset_database = require('./reset_database')
 router.get('/reset_database',reset_database)
 
+//主页
 var stu_index = require('./stu_index')
 router.get('/stu_index',stu_index)
 var tea_index = require('./tea_index')
 router.get('/tea_index',tea_index)
+
+//签到接口
+var course_sign = require('./course_sign.js')
+router.get('/course/sign',course_sign)
+
+var course_open = require('./course_open.js')
+router.get('/course/open',course_open)
+
+var course_info = require('./course_info.js')
+router.get('/course/info',course_info)
+
+var course_history = require('./course_history.js')
+router.get('/course/history',course_history)
 
 module.exports = router

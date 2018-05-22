@@ -1,0 +1,15 @@
+<!--pages/course_signhistory/course_signhistory.wxml-->
+<view class="container"> 
+    <view class="table">
+        <view class="table-title">
+            <text class="title-1">课程名</text>
+            <text class="title-2">签到时间</text>
+        </view>
+        <scroll-view class="table-main" scroll-y="{{true}}">
+            <view class="table-cell" wx:for="{{sign_info}}">
+                <text class="cell-1">{{item.c_name}}</text>
+                <text class="cell-2">{{item.sign_date}}</text>
+            </view>
+        </scroll-view>
+    </view>
+</view> 

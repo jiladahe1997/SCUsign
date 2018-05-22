@@ -22,11 +22,27 @@ module.exports = async function stu_index(ctx){
         })
         var week = await knex('week')
         var weather = await knex('weather')
+        var sign = []
+        var sign_temp = await knex('stu_info').innerJoin('stu_course','stu_info.stu_openid','=','stu_course.stu_openid').innerJoin('stu_sign','stu_sign.stu_openid','=','stu_info.stu_openid')
+
+        //todo: 显示已经签到过了
+        //排除半天以前的签到结果
+        try{
+            for(let i=0,len=sign_temp.length;i<len;i++){
+                if(new Date(sign_temp[i].sign_date) > new Date() - 1000 * 3600 * 12){
+                    sign.push(sign_temp[i])
+                }
+            }
+        }catch(e){
+            //没有任何签到信息
+            sign = []
+        }
 
         ctx.body = {
             stu_info: result_join,
             week_info: week,
-            weather: weather
+            weather: weather,
+            sign: sign
         }
     }catch(e){
         console.log(e);

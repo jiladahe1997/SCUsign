@@ -1,8 +1,8 @@
 <view class= "container">
     <view class="title">
         <image class="title-time"  src="./qing.png" />
-        <text class="title-hello">早上好，</text>
-        <text decode="true" class="title-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;任茗睿同学。</text>
+        <text class="title-hello">{{title.time}}，</text>
+        <text decode="true" class="title-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{title.name}}{{title.identity}}。</text>
     </view>
     <view class="date">
        <view class="date-date">
@@ -20,14 +20,14 @@
     <view class="course" >
         <image mode="" class="course-icon-left" src="./enter-left.png" />
         <view class="course-scroll-cover">
-        <scroll-view  class="course-scroll" scroll-x="true" scroll-y="true">
-        <view class="scroll-item" wx:for="{{course}}">
-            <text>{{item.c_name}}</text>
-            <text class="scroll-name">{{item.tea_name}}</text>
-            <icon class="scroll-icon" type="cancel" size="40" color="red" />
-            <text class="scroll-isopen">签到未开启</text>
-        </view>
-         </scroll-view>
+            <scroll-view  class="course-scroll" scroll-x="true" scroll-y="true">
+            <view class="scroll-item" wx:for="{{course}}" bindtap="course_detail" data-course-cid="{{item.c_id}}">
+                <text>{{item.c_name}}</text>
+                <text class="scroll-name">{{item.tea_name}}</text>
+                <icon class="scroll-icon" type="{{item.c_sign ?   'waiting' : 'cancel'}}" size="40" color="red" />
+                <text class="scroll-isopen">{{item.c_sign ? '签到中' : '签到未开启'}}</text>
+            </view>
+            </scroll-view>
         </view>
         <image class="course-icon-right" src="./enter-right.png" />
         <view class="tabbar-diviLine"></view>

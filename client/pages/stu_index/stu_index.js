@@ -6,6 +6,8 @@ const week_table = ['一','二','三','四','五','六','日']
 Page({
     data: {
         token: null,
+        identity: null,
+        title: {},
         week:{
             date: '获取中...',
             day: '获取中...',
@@ -25,11 +27,13 @@ Page({
            key: 'token',
            success: (res)=>{
             this.setData({
-                token: res.data
+                token: res.data,
+                identity: options.identity
             })
-            console.log('token',this.data.token)
+            
+            console.log('token',this.data)
             wx.request({
-                url: `${config.service.host}/weapp/stu_index`,
+                url: `${config.service.host}/weapp/${this.data.identity == 'stu' ? 'stu_index' : 'tea_index'}`,
                 header: {
                     'Content-Type': 'application/json'
                 },
@@ -37,7 +41,21 @@ Page({
                     token: this.data.token
                 },
                 success: (res) => {
-                   console.log("渲染主界面",res)
+                    //此处用setData，而不用this.data直接赋值，因为是在回调里面，实质onload阶段以及执行完毕
+                   console.log("渲染主界面",res,this.data)
+
+                   //渲染 title
+                    var time = new Date().getHours() <13 ? "早上好" : new Date().getHours() < 19 ? "下午好" : "晚上好"
+                    var name = res.data.stu_info[0].stu_name || res.data.stu_info[0].tea_name
+                    var identity = options.identity == 'stu' ? "同学" : "老师"
+                    this.setData({
+                        title: {
+                            time: time,
+                            name: name,
+                            identity: identity
+                        }
+                    })
+
 
                    //渲染 日期
                     let temp = new Date()
@@ -102,5 +120,11 @@ Page({
     onPullDownRefresh: function() {
         //Do some when page pull down.
         
+    },
+    course_detail(e){
+        console.log("点击课程:",e)
+        wx.redirectTo({
+            url: `../stu_course/stu_course?c_id=${e.currentTarget.dataset.courseCid}&identity=${this.data.identity}`,
+        })
     }
 })

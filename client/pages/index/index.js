@@ -19,7 +19,7 @@ Page({
   onLoad: function (options) {
     console.log(options);
     
-    this.data.test_hours = parseInt(options.time)
+    this.data.test_hours = parseInt(options.time)  //此处不能用setData。详情见生命周期
   },
 
   /**
@@ -159,6 +159,9 @@ Page({
             success: function (res) {
               console.log(res);
               //res.data.isSuccess = false
+              //
+              //todo:将identity存入缓存，而不是一直传参
+              //
               if (res.data.isSuccess) {
                 wx.setStorage({
                   key: 'token',
@@ -172,13 +175,13 @@ Page({
                       showCancel: false,
                       success: () => {
                         if (res.data.identity == '老师') {
-                          wx.navigateTo({
-                            url: '../tea_index/tea_index'
+                          wx.redirectTo({
+                            url: '../stu_index/stu_index?identity=tea'
                           })
                         }
                         else {
-                          wx.navigateTo({
-                            url: '../stu_index/stu_index'
+                          wx.redirectTo({
+                            url: '../stu_index/stu_index?identity=stu'
                           })
                         }
                       }
@@ -194,7 +197,7 @@ Page({
                   //content: res.data.msg,
                   showCancel: false,
                   success:()=>{
-                    wx.navigateTo({
+                    wx.redirectTo({
                       url:'../stu_regis/stu_regis'
                     })
                   }

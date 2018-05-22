@@ -1,0 +1,33 @@
+<!--pages/stu_course/stu_course.wxml-->
+
+
+<view class="header" bindtap="backToIndex">
+    <image class="header-enter" src="./enter-left.png" />
+    <text class="header-text">返回首页</text>
+</view>
+<view class="course">
+    <text class="course-name">{{course_info.c_name}}</text>
+    <text class="course-tea">{{course_info.tea_name}}</text>
+    <view class="course-num">
+        <text class="course-num-text">课程号</text>
+        <view class="separate"></view>
+        <text class="course-num-text">课序号</text>
+        <text class="course-num-text">{{course_info.c_number}}</text>
+        <view class="separate"></view>
+        <text class="course-num-text">{{course_info.c_order}}</text>
+    </view>
+</view>
+<view class="subNav">
+<!-- 修复flex布局高度自动填充的问题 -->
+<view class="subNav-flexCover">
+    <text class="subNav-text subNav-text-left" bindtap="toCourseAnnounce">课程公告</text>
+
+<text class="subNav-text subNav-text-right" bindtap="toSignHistory">历史签到信息</text>
+</view>
+
+</view>
+<view class="sign" bindtap="{{ identity == 'stu' ? course_info.c_sign ? 'sign' : '' : course_info.c_sign ? 'close' : 'open'}}">
+  <icon class="sign-icon" type="{{course_info.c_sign ?   'waiting' : 'cancel'}}" size="150" ></icon>  
+  <text>{{ identity == 'stu' ? course_info.c_sign ? '点击签到' : '签到未开启' : course_info.c_sign ?  '签到已开启，点击关闭' : '签到已关闭，点击开启'}}</text>
+</view>
+

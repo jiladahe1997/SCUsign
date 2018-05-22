@@ -1,0 +1,102 @@
+/* pages/stu_course/stu_course.wxss */
+
+
+page{
+    height: 100%
+}
+view{
+    box-sizing: border-box
+}
+
+
+
+
+
+
+
+.header{
+    height: 10%;
+    padding:5% 0 0 5%
+}
+.header-enter{
+    width: 20rpx;
+    height: 40rpx;
+    margin-right: 1%;
+    vertical-align: middle
+}
+.header-text{
+    font-size: 15px;
+    vertical-align: middle
+}
+
+
+
+
+
+.course{
+    height: 40%;
+    padding-top:10%
+}
+.course-name, .course-tea{
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 27px;
+}
+.course-name{
+    margin-bottom: 5%
+}
+.course-num{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top:10%;
+}
+.course-num-text{
+    display: block;
+    width: 45%;
+    text-align: center;
+    font-size: 17px;
+}
+.separate{
+    width: 2px;
+    height: 22px;
+    background: black
+}
+
+
+
+.subNav{
+    height: 10%;
+}
+.subNav-flexCover{
+    display: flex;
+    justify-content: space-between
+}
+.subNav-text{
+    display: inline;
+    background-color: #e8e7e5;
+    padding: 2% 0;
+    white-space: nowrap;
+}
+.subNav-text-left{
+    padding-right: 30rpx;
+    border-radius: 0 60rpx 60rpx 0 ;
+}
+.subNav-text-right{
+    padding-left: 30rpx;
+    border-radius: 60rpx 0   0  60rpx;
+}
+
+
+
+
+
+.sign{
+    height: 40%;
+    text-align: center
+}
+
+.sign-icon{
+    display: block
+}

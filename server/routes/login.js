@@ -29,7 +29,7 @@ module.exports = async function login(ctx){
                 //查表->用户是否存在 ? 只更新token : 更新openid并更新token  
                 var result_stu = await knex('stu_info').where('stu_openid', openid)
                 var result_tea = await knex('tea_info').where('tea_openid',openid)
-                if (result_stu.length == 0 && reasult_tea.length == 0) {
+                if (result_stu.length == 0 && result_tea.length == 0) {
                     ctx.status = 200
                     ctx.body = {
                         isSuccess: false,

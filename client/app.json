@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/test_index/test_index",
+    "pages/course_signhistory/course_signhistory",
+    "pages/stu_course/stu_course",
     "pages/stu_index/stu_index",
     "pages/stu_regis/stu_regis",
     "pages/index/index",
@@ -8,7 +10,8 @@
     "pages/tea_regis/tea_regis",
     "pages/index1/index",
     "pages/addCgi/addCgi",
-    "pages/tea_index/tea_index"
+    "pages/tea_index/tea_index",
+    "pages/course_announce/course_announce"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

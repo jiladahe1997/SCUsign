@@ -18,23 +18,19 @@ module.exports = async function stuIndex(ctx){
         var result = await knex('tea_info').innerJoin('course','course.c_tea','=','tea_info.tea_openid').innerJoin('stu_course','stu_course.c_id','=','course.c_id').where({
             'tea_token': ctx.query.token
         })
-        /*var result_teaInfo = await knex('tea_info').where({
-            'tea_token': ctx.query.token
-            })
-        //课程信息表
-        var result_course = await knex('course').where({
-            'c_tea': result_teaInfo[0].tea_token
-        })
+        var week = await knex('week')
+        var weather = await knex('weather')
+        var sign = []
+        var sign_temp = await knex('stu_info').innerJoin('stu_course','stu_info.stu_openid','=','stu_course.stu_openid').innerJoin('stu_sign','stu_sign.stu_openid','=','stu_info.stu_openid')
 
-        var result_stu_course = []
-        for(let i=0;i<result_course.length;i++){
-            result_stu_course.push(await knex('stu_course').where({
-                'c_id': result_course[i].c_id
-            }))
-        }*/
 
         ctx.body = {
-            tea_info: result
+            //兼容学生主页代码
+            //tea_info: result,
+            stu_info: result,
+            week_info: week,
+            weather: weather,
+            sign: sign
         }
     }catch(e){
         console.log(e);
