@@ -1,6 +1,10 @@
 <!--pages/course_signhistory/course_signhistory.wxml-->
 <view class="container"> 
-    <view wx:if="{{none}}" class="table">
+    <view class="header" bindtap="backToCourse">
+        <image class="header-enter" src="./enter-left.png" />
+        <text class="header-text">返回首页</text>
+    </view>
+    <view wx:if="{{identity == 'stu'}}" class="table">
         <view class="table-title">
             <text class="title-1">课程名</text>
             <text class="title-2">签到时间</text>
@@ -13,22 +17,22 @@
         </scroll-view>
     </view>
 
-    <scroll-view wx:if="{{true}}" class="table-tea" scroll-y="{{true}}" scroll-x="{{true}}">
-
-        <text class="blank">姓名/学号</text>
-        <view class="horizontal">
-            <text class="hor-time">2018年5月23日 13:05:11</text>
+    <scroll-view wx:if="{{identity== 'tea'}}" class="table-tea" scroll-y="{{true}}" scroll-x="{{true}}">
+        <view class='horizontal-cover'>
+          <text class="blank">姓名/学号</text>
+          <view class="horizontal" wx:for="{{sign_info.sign_time}}">
+              <text class="hor-time" >{{item.f_time}}</text>
+          </view>
         </view>
-
         <view class="vertical-cover">
             <view class="vertical">
-                <text class="ver-name">任茗睿</text>
-                <text class="ver-name">任茗睿</text>
+                <text class="ver-name" wx:for="{{sign_info.stu_name}}">{{item}}</text>
+
             </view>
             <view class="main">
-                <view class="main-row">
-                    <view class="main-cell">
-                        <icon class="main-cell-icon" type="success" size="20" color="" />
+                <view class="main-row" wx:for="{{sign_info.stu_name}}" wx:for-item="stu_name">
+                    <view class="main-cell" wx:for="{{sign_info.sign_time}}" wx:for-item="sign_time">
+                        <icon class="main-cell-icon" type="{{sign_info.stu_sign[stu_name][sign_time.f_time]}}" size="20" color="" />
                     </view>
                 </view>
             </view>

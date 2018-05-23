@@ -17,10 +17,28 @@ view{
     padding: 1rpx
 }
 
+.header{
+    height: 10%;
+    padding:5% 0 0 5%
+}
+.header-enter{
+    width: 20rpx;
+    height: 40rpx;
+    margin-right: 1%;
+    vertical-align: middle
+}
+.header-text{
+    font-size: 15px;
+    vertical-align: middle
+}
+
+
+
+
 .table{
     height: 80%;
     width: 80%;
-    margin: 10% auto;
+    margin: 0 auto;
 
 }
 
@@ -78,7 +96,9 @@ view{
     width: 99%;
     border: 2px solid black;
 }
-
+.horizontal-cover{
+  white-space: nowrap
+}
 .horizontal{
     display: inline-block;
     width: 25%;
@@ -91,6 +111,7 @@ view{
 .hor-time{
     /*line-height: 20rpx;         *.                   /*bug line-height继承重写无效*/
     font-size: 15px;
+    white-space: normal
 }
 .blank{
     display: inline-block;
@@ -126,6 +147,7 @@ view{
     
 }
 .main-cell{
+  display: inline-block;
     width: 31.25%;
     text-align: center;
     border-right: 1px solid black;

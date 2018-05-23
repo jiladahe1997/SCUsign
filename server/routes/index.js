@@ -5,7 +5,7 @@ const router = require('koa-router')({
     prefix: '/weapp'                  //这一句话很关键，prefix路径
 })
 // router 是koa官方路由模块
-const controllers = require('../controllers')
+//const controllers = require('../controllers')
 //这是一个简写的中间件集合
 //目录下的index.js默认为目录exports
 
@@ -18,7 +18,7 @@ const controllers = require('../controllers')
 //         图片上传
 //         数据库
 //         客服消息
-const { auth: { authorizationMiddleware, validationMiddleware } } = require('../qcloud')
+//const { auth: { authorizationMiddleware, validationMiddleware } } = require('../qcloud')
 
 
 
@@ -29,23 +29,23 @@ var login = require('./login.js')
 router.get('/login', login)
 
 // 用户信息接口（可以用来验证登录态）
-router.get('/user', validationMiddleware, controllers.user)
+//router.get('/user', validationMiddleware, controllers.user)
 
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
-router.post('/upload', controllers.upload)
+//router.post('/upload', controllers.upload)
 
 // --- 信道服务接口 Demo --- //
 // GET  用来响应请求信道地址的
-router.get('/tunnel', controllers.tunnel.get)
+//outer.get('/tunnel', controllers.tunnel.get)
 // POST 用来处理信道传递过来的消息
-router.post('/tunnel', controllers.tunnel.post)
+//router.post('/tunnel', controllers.tunnel.post)
 
 // --- 客服消息接口 Demo --- //
 // GET  用来响应小程序后台配置时发送的验证请求
-router.get('/message', controllers.message.get)
+//router.get('/message', controllers.message.get)
 // POST 用来处理微信转发过来的客服消息
-router.post('/message', controllers.message.post)
+//router.post('/message', controllers.message.post)
 
 //学生注册接口
 var stu_regis = require('./stu_regis.js')
@@ -55,8 +55,7 @@ router.post('/stu_regis', stu_regis )
 var tea_regis = require('./tea_regis.js')
 router.post('/tea_regis', tea_regis)
 
-var reset_database = require('./reset_database')
-router.get('/reset_database',reset_database)
+
 
 //主页
 var stu_index = require('./stu_index')
@@ -75,6 +74,7 @@ var course_info = require('./course_info.js')
 router.get('/course/info',course_info)
 
 var course_history = require('./course_history.js')
-router.get('/course/history',course_history)
+router.get('/course/history/stu',course_history.course_history_stu)
+router.get('/course/history/tea',course_history.course_history_tea)
 
 module.exports = router

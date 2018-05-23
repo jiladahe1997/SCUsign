@@ -33,6 +33,8 @@ module.exports = async function (ctx) {
         ctx.body = {
             msg: "操作失败！"
         }
+    }finally{
+        knex.destroy()
     }
 
 }

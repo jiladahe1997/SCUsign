@@ -37,5 +37,7 @@ module.exports = async function stuIndex(ctx){
         ctx.body = {
             msg: "查询失败，请联系管理员"
         }
+    }finally{
+        knex.destroy()
     }
 }

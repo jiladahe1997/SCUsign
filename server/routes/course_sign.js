@@ -48,6 +48,8 @@ module.exports = async function (ctx) {
             msg : '签到失败，原因如下',
             error : e
         }
+    }finally{
+        knex.destroy()
     }
 
     
