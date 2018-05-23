@@ -6,23 +6,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sign_info: null
+    sign_info: null,
+    c_id: null,
+    identity: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
+    
+    this.setData({
+      identity: options.identity,
+      c_id: options.c_id
+    })                                                 
     wx.getStorage({
       key: 'token',
       success: (res) => {
+
+        console.log(this.data);
+        
         wx.request({
-          url: `${config.service.host}/weapp/course/history`,
+          url: `${config.service.host}/weapp/course/history/stu`,
           header: {
             'Content-Type': 'application/json'
           },
           data: {
-            stu_token: res.data
+            stu_token: res.data,
+            c_id: options.c_id
+
           },
           success:  (res) => {
             console.log(res);

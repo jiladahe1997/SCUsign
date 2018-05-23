@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options',options)
+    //console.log('options',options)
     this.setData({
       c_id: options.c_id ,                    //2018.5.17更新好像可以用this.setData
       identity: options.identity  
@@ -31,11 +31,11 @@ Page({
         c_id: this.data.c_id
       },
       success: (res)=>{
-        console.log(res)
+       // console.log(res)
         this.setData({
           course_info: res.data.course_info[0]
         })
-        console.log("data",this.data)
+       // console.log("data",this.data)
       }
     })
   },
@@ -44,14 +44,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("data",this.data)
+    //console.log("data",this.data)
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("data",this.data)
+    //console.log("data",this.data)
   },
 
   /**
@@ -92,7 +92,7 @@ Page({
     wx.getStorage({
       key: 'token',
       success: (res)=> {
-        console.log("学生签到！",this.data)
+       //console.log("学生签到！",this.data)
         wx.request({
           url: `${config.service.host}/weapp/course/sign`,
           header: {
@@ -103,7 +103,7 @@ Page({
             c_id: this.data.c_id
           },
           success: function(res) {
-            console.log(res);
+            //console.log(res);
             if(res.data.msg == '签到成功'){
               wx.showToast({
                 title: '签到成功！',
@@ -133,7 +133,7 @@ Page({
         c_id: this.data.c_id
       },
       success: (res) =>{
-        console.log(res)
+        //console.log(res)
         wx.request({
           url: `${config.service.host}/weapp/course/info`,
           header: {
@@ -143,11 +143,11 @@ Page({
             c_id: this.data.c_id
           },
           success: (res)=>{
-            console.log(res)
+           // console.log(res)
             this.setData({
               course_info: res.data.course_info[0]
             })
-            console.log("data",this.data)
+            //console.log("data",this.data)
           }
         })
       }
@@ -164,7 +164,7 @@ Page({
         c_id: this.data.c_id
       },
       success: (res)=> {
-        console.log(res)
+       // console.log(res)
         wx.request({
           url: `${config.service.host}/weapp/course/info`,
           header: {
@@ -174,11 +174,11 @@ Page({
             c_id: this.data.c_id
           },
           success: (res)=>{
-            console.log(res)
+           // console.log(res)
             this.setData({
               course_info: res.data.course_info[0]
             })
-            console.log("data",this.data)
+            //console.log("data",this.data)
           }
         })
       }
@@ -196,7 +196,7 @@ Page({
   },
   toSignHistory(){
     wx.redirectTo({
-      url: `../course_signhistory/course_signhistory?identity=${this.data.identity}`
+      url: `../course_signhistory/course_signhistory?identity=${this.data.identity}&c_id=${this.data.c_id}`
     })
   }
 })

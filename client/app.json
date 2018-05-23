@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/course_signhistory/course_signhistory",
     "pages/test_index/test_index",
     "pages/regis/regis",
-    "pages/course_signhistory/course_signhistory",
     "pages/stu_course/stu_course",
     "pages/stu_index/stu_index",
     "pages/index/index",

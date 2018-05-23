@@ -1,6 +1,6 @@
 <!--pages/course_signhistory/course_signhistory.wxml-->
 <view class="container"> 
-    <view class="table">
+    <view wx:if="{{none}}" class="table">
         <view class="table-title">
             <text class="title-1">课程名</text>
             <text class="title-2">签到时间</text>
@@ -12,4 +12,29 @@
             </view>
         </scroll-view>
     </view>
+
+    <scroll-view wx:if="{{true}}" class="table-tea" scroll-y="{{true}}" scroll-x="{{true}}">
+
+        <text class="blank">姓名/学号</text>
+        <view class="horizontal">
+            <text class="hor-time">2018年5月23日 13:05:11</text>
+        </view>
+
+        <view class="vertical-cover">
+            <view class="vertical">
+                <text class="ver-name">任茗睿</text>
+                <text class="ver-name">任茗睿</text>
+            </view>
+            <view class="main">
+                <view class="main-row">
+                    <view class="main-cell">
+                        <icon class="main-cell-icon" type="success" size="20" color="" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </scroll-view>
+
+
 </view> 
