@@ -129,7 +129,7 @@ Page({
     },
     add_course(){
         wx.redirectTo({
-            url: '../add_course/add_course'
+          url: `../add_course/add_course?identity=${this.data.identity}`
         })
     }
 })
