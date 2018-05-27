@@ -1,1 +1,53 @@
 /* pages/add_course/add_course.wxss */
+/* pages/reserch/reserch.wxss */
+.container{
+  height: 100%;
+}
+
+.header{
+    height: 10%;
+    padding:5% 0 0 5%
+}
+.header-enter{
+    width: 20rpx;
+    height: 40rpx;
+    margin-right: 1%;
+    vertical-align: middle
+}
+.header-text{
+    font-size: 15px;
+    vertical-align: middle
+}
+
+
+.reserch{
+  color: black;
+  font-size: 80rpx;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.class1{
+    border:  1px solid white;
+    border-radius: 40px;
+    margin-left: 27%;
+    margin-top: 20%;
+}
+
+.class2{
+    border:  1px solid white;
+    border-radius: 40px;
+    margin-left: 27%;
+    margin-top: 5%;
+}
+
+.input1{
+  color: black
+}
+
+
+.add{
+  margin-right: 30%;
+  margin-left:30%;
+  margin-top: 20%
+}

@@ -1,9 +1,25 @@
 /* pages/regis/regis.wxss */
+.header{
+    height: 10%;
+    padding:5% 0 0 5%
+}
+.header-enter{
+    width: 20rpx;
+    height: 40rpx;
+    margin-right: 1%;
+    vertical-align: middle
+}
+.header-text{
+    font-size: 15px;
+    vertical-align: middle
+}
+
+
 .style{
   color: black;
   font-size: 120rpx;
   text-align: center;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .change{
@@ -19,7 +35,13 @@
 
 .input{
     padding-left: 5%;
-    height: 40px;
+    height: 80rpx;
+}
+
+.pickerinput{
+    padding-left: 5%;
+    height: 60rpx;
+    margin-top: 20rpx
 }
 
 .inputView{
@@ -42,4 +64,5 @@ background-size: 100% 100%;
 
 .container{
   height: 100%;
+  width:100%
 }
