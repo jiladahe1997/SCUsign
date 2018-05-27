@@ -29,7 +29,7 @@ module.exports = async function (ctx) {
                 'stu_openid': stu_info[0].stu_openid,
                 'f_id': f_id[0].f_id
             })
-            if(check) throw "签到失败！已经签过到了"
+            if(check.length) throw "签到失败！已经签过到了"
 
             await knex('stu_sign').insert({
                 stu_openid: stu_info[0].stu_openid,
@@ -44,6 +44,7 @@ module.exports = async function (ctx) {
             throw '签到未开启！'
         }
     }catch(e){
+        console.log(e)
         ctx.body = {
             msg : '签到失败，原因如下',
             error : e

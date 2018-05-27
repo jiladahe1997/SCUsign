@@ -1,5 +1,5 @@
 const CONF = {
-    port: '5757',
+    port: '80',
     rootPathname: '',
 
     // 微信小程序 App ID
@@ -22,7 +22,7 @@ const CONF = {
         user: 'root',
         db: 'SCUsign',
         //db: 'cAuth',
-        pass: 'wxd743db00ee7e20b8',
+        pass: '',
         char: 'utf8mb4'
     },
 

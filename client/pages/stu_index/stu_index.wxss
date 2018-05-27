@@ -144,6 +144,14 @@ page{
     white-space: normal
 }
 
+.no-course{
+    font-size: 25px;
+    background: transparent;
+    width: 90%;
+    margin-top: 25%;
+    margin-left: 9%
+}
+
 
 .scroll-name{
     display: block;

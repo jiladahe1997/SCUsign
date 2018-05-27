@@ -78,7 +78,7 @@ Page({
                   return _value.f_id == value.f_id
                 }).length == 0) {
                   var date = new Date(value.f_time)
-                  value.f_time = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+                  value.f_time = `${date.getFullYear()}年${date.getMonth() + 1}月\n${date.getDate()}日 ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
                   sign_time.push({
                     f_id: value.f_id,
                     f_time: value.f_time

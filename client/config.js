@@ -3,7 +3,7 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://bs1dngbe.qcloud.la';
+var host = 'http://45.40.240.159';
 
 var config = {
 

@@ -71,7 +71,7 @@ Page({
   
   },
 
-regis(e) {
+tea_regis(e) {
     console.log("教师注册开始", e);
 
     var config = require("../../config.js")
@@ -92,10 +92,29 @@ regis(e) {
             success: function (res) {
               console.log("教师注册结果", res);
               if (res.data.isSuccess) {
-                console.log("注册成功")
+                wx.showModal({
+                  title: '注册成功！',
+                  content: '',
+                  showCancel: false,
+                  success: ()=>{
+                    wx.redirectTo({
+                      url: '../index/index'
+                    })
+                  }
+                })
               }
               else {
                 console.log("注册失败")
+                wx.showModal({
+                  title: '注册失败！',
+                  content: '请通过首页的联系方式联系我们解决，谢谢！',
+                  showCancel: false,
+                  success: ()=>{
+                    wx.redirectTo({
+                      url: '../index/index'
+                    })
+                  }
+                })
               }
             }
           })
@@ -130,10 +149,31 @@ stu_regis(e) {
           success: function (res) {
             console.log("学生注册结果", res);
             if (res.data.isSuccess) {
-              console.log("注册成功")
+              if (res.data.isSuccess) {
+                wx.showModal({
+                  title: '注册成功！',
+                  content: '',
+                  showCancel: false,
+                  success: ()=>{
+                    wx.redirectTo({
+                      url: '../index/index'
+                    })
+                  }
+                })
+              }
             }
             else {
               console.log("注册失败")
+              wx.showModal({
+                title: '注册失败！',
+                content: '请通过首页的联系方式联系我们解决，谢谢！',
+                showCancel: false,
+                success: ()=>{
+                  wx.redirectTo({
+                    url: '../index/index'
+                  })
+                }
+              })
             }
           }
         })

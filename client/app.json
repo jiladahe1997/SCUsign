@@ -6,7 +6,8 @@
     "pages/stu_course/stu_course",
     "pages/stu_index/stu_index",
     "pages/index/index",
-    "pages/course_announce/course_announce"
+    "pages/course_announce/course_announce",
+    "pages/add_course/add_course"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

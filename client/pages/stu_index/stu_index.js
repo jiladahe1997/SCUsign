@@ -42,7 +42,7 @@ Page({
                 },
                 success: (res) => {
                     //此处用setData，而不用this.data直接赋值，因为是在回调里面，实质onload阶段以及执行完毕
-                   //console.log("渲染主界面",res,this.data)
+                   console.log("渲染主界面",res,this.data)
 
                    //渲染 title
                     var time = new Date().getHours() <13 ? "早上好" : new Date().getHours() < 19 ? "下午好" : "晚上好"
@@ -94,7 +94,7 @@ Page({
 
                     //渲染 课程
                     this.setData({
-                        course: res.data.stu_info
+                        course: res.data.course_info
                     })
                 }
             })
@@ -125,6 +125,11 @@ Page({
         //console.log("点击课程:",e)
         wx.redirectTo({
             url: `../stu_course/stu_course?c_id=${e.currentTarget.dataset.courseCid}&identity=${this.data.identity}`,
+        })
+    },
+    add_course(){
+        wx.redirectTo({
+            url: '../add_course/add_course'
         })
     }
 })

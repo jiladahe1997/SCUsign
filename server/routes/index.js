@@ -77,4 +77,8 @@ var course_history = require('./course_history.js')
 router.get('/course/history/stu',course_history.course_history_stu)
 router.get('/course/history/tea',course_history.course_history_tea)
 
+var add_course = require('./add_course.js')
+router.get('/add_course',add_course.add_course)
+router.get('/join_course',add_course.join_course)
+
 module.exports = router

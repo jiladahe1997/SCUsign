@@ -48,7 +48,7 @@ module.exports = {
       }
     })
     try{
-      var sign_info = await knex('stu_sign').innerJoin('stu_info', 'stu_info.stu_openid', '=', 'stu_sign.stu_openid').innerJoin('sign_frequency','sign_frequency.f_id','=','stu_sign.f_id').where('c_id',ctx.query.c_id)
+      var sign_info = await knex('stu_sign').innerJoin('stu_info', 'stu_info.stu_openid', '=', 'stu_sign.stu_openid').innerJoin('sign_frequency','sign_frequency.f_id','=','stu_sign.f_id').where('stu_sign.c_id',ctx.query.c_id)
       ctx.body = {
         msg: "成功！",
         sign_info: sign_info

@@ -18,9 +18,13 @@
        </view>
     </view>
     <view class="course" >
+
         <image mode="" class="course-icon-left" src="./enter-left.png" />
         <view class="course-scroll-cover">
             <scroll-view  class="course-scroll" scroll-x="true" scroll-y="true">
+            <view class="scroll-item no-course" wx:if="{{course.length == 0 }}">
+                <text>还未加入任何课程哦！</text>
+            </view>
             <view class="scroll-item" wx:for="{{course}}" bindtap="course_detail" data-course-cid="{{item.c_id}}">
                 <text>{{item.c_name}}</text>
                 <text class="scroll-name">{{item.tea_name}}</text>
@@ -43,7 +47,7 @@
             <image class="tabbar-img" src="./tabbar_person.png" />
             <text class="tabbar-text">个人信息</text>      
         </view>
-        <view class="tabbar-item"> 
+        <view class="tabbar-item" bindtap="add_course"> 
             <image class="tabbar-img" src="./tabbar_add.png" />
             <text class="tabbar-text">添加课程</text>
          </view>

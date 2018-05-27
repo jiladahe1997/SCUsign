@@ -62,7 +62,7 @@ view{
 }
 .cell-1{
     display: inline-block;
-    width: 70%;
+    width: 65%;
     height: 54rpx;
     line-height: 54rpx;
     border-bottom: 1px solid black;
@@ -73,7 +73,7 @@ view{
 }
 .cell-2{
     display: inline-block;
-    width: 30%;
+    width: 35%;
     height: 54rpx;
     line-height: 54rpx;
     font-size: 10px;
@@ -101,7 +101,7 @@ view{
 }
 .horizontal{
     display: inline-block;
-    width: 25%;
+    width: 28%;
     height: 100rpx;
     /*line-height: 100rpx;     */                           /*bug line-height继承重写无效*/
     border-right: 1px solid black;
@@ -148,7 +148,7 @@ view{
 }
 .main-cell{
   display: inline-block;
-    width: 31.25%;
+    width: 35%;
     text-align: center;
     border-right: 1px solid black;
     border-bottom: 1px solid black

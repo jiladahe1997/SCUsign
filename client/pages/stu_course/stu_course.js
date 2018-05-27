@@ -133,7 +133,7 @@ Page({
         c_id: this.data.c_id
       },
       success: (res) =>{
-        //console.log(res)
+        console.log(res)
         wx.request({
           url: `${config.service.host}/weapp/course/info`,
           header: {
@@ -143,11 +143,11 @@ Page({
             c_id: this.data.c_id
           },
           success: (res)=>{
-           // console.log(res)
+            console.log(res)
             this.setData({
               course_info: res.data.course_info[0]
             })
-            //console.log("data",this.data)
+            console.log("data",this.data)
           }
         })
       }
@@ -164,7 +164,7 @@ Page({
         c_id: this.data.c_id
       },
       success: (res)=> {
-       // console.log(res)
+        console.log(res)
         wx.request({
           url: `${config.service.host}/weapp/course/info`,
           header: {

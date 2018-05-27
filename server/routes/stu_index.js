@@ -17,7 +17,8 @@ module.exports = async function stu_index(ctx){
 
     try{
         //优化：连接查询，
-        var result_join = await knex('stu_info').innerJoin('stu_course','stu_info.stu_openid','=','stu_course.stu_openid').innerJoin('course','course.c_id','=','stu_course.c_id').innerJoin('tea_info','tea_info.tea_openid','=','course.c_tea').where({
+        var stu_info = await knex("stu_info").where('stu_token',ctx.query.token)
+        var course_info = await knex('stu_info').innerJoin('stu_course','stu_info.stu_openid','=','stu_course.stu_openid').innerJoin('course','course.c_id','=','stu_course.c_id').innerJoin('tea_info','tea_info.tea_openid','=','course.c_tea').where({
             'stu_token': ctx.query.token
         })
         var week = await knex('week')
@@ -39,7 +40,8 @@ module.exports = async function stu_index(ctx){
         }
 
         ctx.body = {
-            stu_info: result_join,
+            stu_info: stu_info,
+            course_info: course_info,
             week_info: week,
             weather: weather,
             sign: sign
