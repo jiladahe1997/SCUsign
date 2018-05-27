@@ -1,20 +1,56 @@
-<!--pages/add_course/add_course.wxml-->
-<text>pages/add_course/add_course.wxml</text>
-<view>
-    <form bindsubmit="join_course" bindreset="">
-        <label for="c_number">课程号</label>
-        <input type="text" name="c_number" id="c_number" />
-        <label for="c_order">课序号</label>
-        <input type="text" name="c_order" id="c_order" />
-        <button formType="submit" >加入课程</button>
-    </form>
+<!--pages/reserch/reserch.wxml-->
+<view wx:if = "{{identity=='tea'}}">
+  <view class="header" bindtap="backToIndex">
+    <image class="header-enter" src="./enter-left副本.png" />
+    <text class="header-text">返回首页</text>
+  </view>
+  <view>
+    <view class='reserch'>
+      添加课程
+    </view>
     <form bindsubmit="add_course" bindreset="">
-        <label for="c_number">课程号</label>
-        <input type="text" name="c_number" id="c_number" />
-        <label for="c_order">课序号</label>
-        <input type="text" name="c_order" id="c_order" />
-        <label for="c_name">课程名</label>
-        <input type="text" name="c_name" id="c_name" />
-        <button formType="submit" >加入课程</button>
+      <view class='class1'>
+        课程号
+        <input class='input1' type='text' name='c_number' id='c_number' placeholder='请输入添加的课程号'></input>
+      </view>
+      <view class='class2'>
+        课序号
+        <input class='input2' type='text' name='c_order' id='c_order' placeholder='请输入添加的课序号'></input>
+      </view>
+      <view class='class2'>
+        课程名
+        <input class='input2' type='text' name='c_name' id='c_name' placeholder='请输入添加的课程名'></input>
+      </view>
+      <view>
+        <button class='add' type="primary" formType="submit">添加课程</button>
+      </view>
     </form>
+  </view>
+</view>
+
+
+<!--pages/reserch/reserch.wxml-->
+<view wx:if = "{{identity=='stu'}}">
+  <view class="header" bindtap="backToIndex">
+    <image class="header-enter" src="./enter-left副本.png" />
+    <text class="header-text">返回首页</text>
+  </view>
+  <view>
+    <view class='reserch'>
+      搜索课程
+    </view>
+    <form bindsubmit="join_course" bindreset="">
+      <view class='class1'>
+        课程号
+        <input class='input1' type='text' name='c_number' id='c_number' placeholder='请输入课程号'></input>
+      </view>
+      <view class='class2'>
+        课序号
+        <input class='input2' type='text' name='c_order' id='c_order' placeholder='请输入课序号'></input>
+      </view>
+      <view>
+        <button formType="submit" class='add' type="primary" fromTyoe="reset">添加课程</button>
+      </view>
+    </form>
+  </view>
 </view>
