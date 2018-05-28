@@ -26,9 +26,9 @@
                 <text>还未加入任何课程哦！</text>
             </view>
             <view class="scroll-item" wx:for="{{course}}" bindtap="course_detail" data-course-cid="{{item.c_id}}">
-                <text>{{item.c_name}}</text>
+                <text class="scroll-tea">{{item.c_name}}</text>
                 <text class="scroll-name">{{item.tea_name}}</text>
-                <icon class="scroll-icon" type="{{item.c_sign ?   'waiting' : 'cancel'}}" size="40" color="red" />
+                <icon class="scroll-icon" type="{{item.c_sign ?   'waiting' : 'cancel'}}" size="40"  />
                 <text class="scroll-isopen">{{item.c_sign ? '签到中' : '签到未开启'}}</text>
             </view>
             </scroll-view>
@@ -45,7 +45,7 @@
         </view>
         <view class="tabbar-item">
             <image class="tabbar-img" src="./tabbar_person.png" />
-            <text class="tabbar-text">个人信息</text>      
+            <text class="tabbar-text">联系我们</text>      
         </view>
         <view class="tabbar-item" bindtap="add_course"> 
             <image class="tabbar-img" src="./tabbar_add.png" />

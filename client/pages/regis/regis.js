@@ -165,9 +165,29 @@ stu_regis(e) {
             console.log("学生注册结果", res);
             if (res.data.isSuccess) {
               console.log("注册成功")
+              wx.showModal({
+                title: '注册成功',
+                content: '注册成功',
+                showCancel: false,
+                success: () => {
+                  wx.redirectTo({
+                    url: '../index/index'
+                  })
+                }
+              })
             }
             else {
               console.log("注册失败")
+              wx.showModal({
+                title: '注册失败',
+                content: '注册失败,请联系管理员',
+                showCancel: false,
+                success: () => {
+                  wx.redirectTo({
+                    url: '../index/index'
+                  })
+                }
+              })
             }
           }
         })

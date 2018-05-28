@@ -2,7 +2,7 @@
 <view class="container"> 
     <view class="header" bindtap="backToCourse">
         <image class="header-enter" src="./enter-left.png" />
-        <text class="header-text">返回首页</text>
+        <text class="header-text">返回课程页面</text>
     </view>
     <view wx:if="{{identity == 'stu'}}" class="table">
         <view class="table-title">
@@ -12,14 +12,14 @@
         <scroll-view class="table-main" scroll-y="{{true}}">
             <view class="table-cell" wx:for="{{sign_info}}">
                 <text class="cell-1">{{item.c_name}}</text>
-                <text class="cell-2">{{item.sign_date}}</text>
+                <text space="{{true}}" decode="{{true}}" class="cell-2">{{item.sign_date}}</text>
             </view>
         </scroll-view>
     </view>
 
     <scroll-view wx:if="{{identity== 'tea'}}" class="table-tea" scroll-y="{{true}}" scroll-x="{{true}}">
         <view class='horizontal-cover'>
-          <text class="blank">姓名/学号</text>
+          <text class="blank">姓名/时间</text>
           <view class="horizontal" wx:for="{{sign_info.sign_time}}">
               <text class="hor-time" >{{item.f_time}}</text>
           </view>
@@ -37,7 +37,7 @@
                 </view>
             </view>
         </view>
-
+        <text class="tips">Tips:请注意，从未使用小程序签到的同学名字是不会出现在记录里面的哦！</text>
     </scroll-view>
 
 

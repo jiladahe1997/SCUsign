@@ -2,7 +2,7 @@
 
 
 Page{
-    height: 100%;
+    height: 99%;
     width: 100%;
     /*overflow: hidden;*/     /*bug: 根元素设置overflow无效*/
 }

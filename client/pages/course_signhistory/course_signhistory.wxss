@@ -92,7 +92,7 @@ view{
 
 /* tea */
 .table-tea{
-    height: 99%;
+    height: 90%;
     width: 99%;
     border: 2px solid black;
 }
@@ -146,6 +146,9 @@ view{
     vertical-align: top;
     
 }
+.main-row{
+    white-space: nowrap;
+}
 .main-cell{
   display: inline-block;
     width: 35%;
@@ -155,4 +158,10 @@ view{
 }
 .main-cell-icon{
     display: inline;
+}
+.tips{
+    display: block;
+    text-align: center;
+    font-size: 9px;
+    margin-top: 10%;
 }

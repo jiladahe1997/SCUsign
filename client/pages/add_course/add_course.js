@@ -83,7 +83,22 @@ Page({
             'stu_token': token.data
           },
           success: function(res) {
-            console.log(res.data.msg)
+            console.log(res);
+            
+            if(res.data.msg == '添加成功！'){
+              wx.showModal({
+                title: '添加成功',
+                content: '已经成功添加了课程哟，回到首页即可看到',
+                showCancel: false,
+              })
+            }
+            else{
+              wx.showModal({
+                title: '添加失败',
+                content: '添加失败，请仔细检查课程号课序号有木有输错哦',
+                showCancel: false,
+              })
+            }
           }
         })
       }
@@ -105,7 +120,20 @@ Page({
             'tea_token': token.data
           },
           success: function(res) {
-            console.log(res.data.msg)
+            if(res.data.msg == '添加成功！'){
+              wx.showModal({
+                title: '添加成功',
+                content: '已经成功添加了课程哟，回到首页即可看到',
+                showCancel: false,
+              })
+            }
+            else{
+              wx.showModal({
+                title: '添加失败',
+                content: '添加失败，请仔细检查课程号课序号有木有输错哦',
+                showCancel: false,
+              })
+            }
           }
         })
       }
@@ -114,7 +142,7 @@ Page({
 
    backToIndex() {
     wx.redirectTo({
-      url: `../index/index?identity=${this.data.identity}`
+      url: `../stu_index/stu_index?identity=${this.data.identity}`
     })
   },
 })

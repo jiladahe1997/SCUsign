@@ -44,7 +44,7 @@ Page({
               var sign_info = res.data.sign_info
               for(let i=0,len=sign_info.length;i<len;i++){
                 var date = new Date(sign_info[i].sign_date)
-                sign_info[i].sign_date = `${date.getFullYear()}.${date.getMonth()+1}.${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+                sign_info[i].sign_date = `${date.getFullYear()}.${date.getMonth()+1}.${date.getDate()}&emsp;&emsp; ${date.getHours().toString().length==1 ? '0'+date.getHours():date.getHours()}:${date.getMinutes().toString().length==1 ? '0'+date.getMinutes():date.getMinutes()}`
               }
 
               
@@ -177,7 +177,7 @@ Page({
   },
   backToCourse(){
     wx.redirectTo({
-      url:`../stu_index/stu_index?identity=${this.data.identity}`
+      url:`../stu_course/stu_course?identity=${this.data.identity}&c_id=${this.data.c_id}`
     })
   },
 })
