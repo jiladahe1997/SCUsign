@@ -3,7 +3,7 @@ const { appId: appId, appSecret: appSecret, mysql:config } = require('../config.
 var https = require('https')
 
 module.exports = async function tea_regis(ctx) {
-    console.log(ctx);
+    //console.log(ctx);
     var knex = require('knex')({
         client: 'mysql',
         connection: {
@@ -25,7 +25,7 @@ module.exports = async function tea_regis(ctx) {
             res.on('data', async (data) => {
                 var openid = JSON.parse(data.toString()).openid
                 var sskey = JSON.parse(data.toString()).session_key
-                console.log(JSON.parse(data.toString()));
+                //console.log(JSON.parse(data.toString()));
                 
                 try{
                     var result = await knex('tea_info').insert({tea_openid:openid,tea_name:ctx.request.body.name,tea_token:sskey})

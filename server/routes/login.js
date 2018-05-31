@@ -2,7 +2,7 @@
 const { appId: appId, appSecret: appSecret, mysql:config } = require('../config.js')
 var https = require('https')
 module.exports = async function login(ctx){
-    console.log(ctx.query.code)
+    //console.log(ctx.query.code)
     var httpsOption = {
         host: 'api.weixin.qq.com',
         path: `/sns/jscode2session?appid=${appId}&secret=${appSecret}&js_code=${ctx.query.code}&grant_type=authorization_code`
@@ -11,7 +11,7 @@ module.exports = async function login(ctx){
         var req = https.request(httpsOption, (res) => {
             //console.log(res);
             res.on('data', async (data) => {
-                console.log(data.toString());
+                //console.log(data.toString());
                 var openid = JSON.parse(data.toString()).openid
                 var knex = require('knex')({
                     client: 'mysql',

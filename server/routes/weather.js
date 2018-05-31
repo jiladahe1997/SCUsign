@@ -37,7 +37,7 @@ module.exports =  async function get_weather(params) {
             type: type,
             last_update: `${year}-${month}-${date} ${hour}-${minute}-${second}`
         })
-        console.log("插入完成！");
+        //console.log("插入完成！");
         
     }catch(e){
         console.log(e);
