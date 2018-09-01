@@ -3,6 +3,7 @@
     height: 100%;
     background-color: #4b4b4b;
     padding: 1px 0;
+    box-sizing: border-box;
 }
 .start-evening{
     color: white

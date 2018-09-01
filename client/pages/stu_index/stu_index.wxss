@@ -200,6 +200,7 @@ page{
     height: 50rpx;
 }
 .tabbar-text{
+    margin-top:10rpx; 
     font-size: 15px;
     display: block;
     position: relative;

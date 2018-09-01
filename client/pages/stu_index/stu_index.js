@@ -60,7 +60,7 @@ Page({
                    //渲染 日期
                     let temp = new Date()
                     var date = `${temp.getFullYear()} 年 ${temp.getMonth()+1} 月 ${temp.getDate()} 日`
-                    var day = `星期${week_table[parseInt(temp.getDay())]}`
+                    var day = `星期${week_table[parseInt(temp.getDay())-1]}`
                     var week = `第 ${require("./helper/week.js")(res.data.week_info[0].start)} 教学周`
                     this.setData({
                         week:{
@@ -130,6 +130,19 @@ Page({
     add_course(){
         wx.redirectTo({
           url: `../add_course/add_course?identity=${this.data.identity}`
+        })
+    },
+    contact_us(){
+        wx.showModal({
+            title: '联系方式',
+            content: '邮箱：972931182@qq.com QQ同号',
+            showCancel: false,
+            confirmText: "我知道啦"
+        })
+    },
+    back_toIndex(){
+        wx.redirectTo({
+            url: `../stu_index/stu_index?identity=${this.data.identity}`
         })
     }
 })

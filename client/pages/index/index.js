@@ -29,8 +29,8 @@ Page({
 
     //判断时间
     var date = new Date()
-    //var hours = date.getHours()
-    var hours = this.data.test_hours;
+    var hours = date.getHours()
+    //var hours = this.data.test_hours;
     console.log("hours",hours,typeof hours);
     if( hours > 5 && hours<=12){
       console.log('morning');
